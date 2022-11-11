@@ -5,11 +5,7 @@ import Router from './routes';
 
 function App() {
   return (
-  //     <div className="App">
-  //       <NavBar/>
-  //       <ItemListContainer greeting={'Le damos la bienvenida a HoopsKicks'} greeting2={'El sitio #1 para comprar zapatillas de baloncesto'}/>
-  //     </div>
-  // );
+  
   <Router/>
   );
 }
