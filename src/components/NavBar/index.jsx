@@ -21,6 +21,9 @@ const NavBar = () => {
                         <li >
                             <Link to="/category/jewelery">Jewelery</Link>
                         </li>
+                        <li >
+                            <Link to="/category/women's clothing">Clothes</Link>
+                        </li>
                         <li>
                             <Link to="/category/Help">Help</Link>
                         </li>

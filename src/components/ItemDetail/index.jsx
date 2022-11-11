@@ -7,7 +7,8 @@ const ItemDetail = ({product}) => {
     <div className='item-detail'>
       <img style={{width: 250,height: 250}} src={product.image} />
       <h1 >{product.title}</h1>
-      <button className='btn btn-danger sm-3'>Bootstrap button</button>
+      <h2>{product.price}USD$</h2>
+      <button className='btn btn-danger sm-3'>Agregar al carrito</button>
     </div>
   )
 }

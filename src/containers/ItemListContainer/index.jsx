@@ -4,7 +4,7 @@ import ItemList from '../../components/ItemList';
 import { useParams } from 'react-router-dom';
 import {BeatLoader} from 'react-spinners'
 
-export default function ItemListContainer ({greeting, greeting2}) {
+export default function ItemListContainer () {
 
     const [products, setProducts] = useState([])
 
@@ -24,7 +24,6 @@ export default function ItemListContainer ({greeting, greeting2}) {
                 }
                 const data = await response.json();
                 console.log(data);
-                // if (data.results) 
                 setProducts(data)
             } catch (error) {
                 console.log(error);
@@ -36,7 +35,10 @@ export default function ItemListContainer ({greeting, greeting2}) {
 
     return (
         <>
-            {products.length ? <ItemList products={products}/> : <BeatLoader/> }
+        <div className='item-list-container'>
+            <h1>Aqui se puede ver un listado de los productos disponibles</h1>
+        </div> 
+        {products.length ? <ItemList products={products}/> : <BeatLoader/> }
         </>
     )
 }

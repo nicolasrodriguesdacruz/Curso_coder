@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ClimbingBoxLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners";
 import ItemDetail from "../../components/ItemDetail";
 
 const ItemDetailContainer = () => {
@@ -21,7 +21,7 @@ const ItemDetailContainer = () => {
         //hacer el fetch del detalle del Producto
     }, [id])
 
-    return (product ? <ItemDetail product={product}/> : <ClimbingBoxLoader/> )
-};
+    return (product ? <ItemDetail product={product}/> : <BeatLoader/> )
+}; 
 
 export default ItemDetailContainer;
