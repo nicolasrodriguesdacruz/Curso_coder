@@ -1,1 +1,1 @@
-En este proyecto se buscara construir un ecommerce que venda zapatillas de basketball.
+En este proyecto se buscara construir un ecommerce que diferentes productos.

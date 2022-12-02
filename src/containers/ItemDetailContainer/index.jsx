@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
 import ItemDetail from "../../components/ItemDetail";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 const ItemDetailContainer = () => {
 
@@ -12,13 +14,21 @@ const ItemDetailContainer = () => {
     useEffect(() => {
 
         const getProductDetail = async () => {
-            const response = await fetch(`https://fakestoreapi.com/products/${id}`)
-            const product = await response.json();
-            setProduct(product)
+            const docRef = doc(db, "products", id);
+
+            //2do generar la petición
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                console.log("Document data:", docSnap.data());
+                setProduct({...docSnap.data(), id: docSnap.id})
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
         }
 
         getProductDetail()
-        //hacer el fetch del detalle del Producto
     }, [id])
 
     return (product ? <ItemDetail product={product}/> : <BeatLoader/> )
