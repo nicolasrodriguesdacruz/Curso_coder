@@ -1,8 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import './styles.scss'
-import { Theme } from '../../contexts/Theme';
-
 /**
  * Card que muestra el producto o personaje
  * @property {Object} product Recibe el product en formato de objeto para renderizarlo
@@ -14,8 +12,6 @@ const Item = ({product}) => {
 
   const navigate = useNavigate()
 
-  const {themeColor} = useContext(Theme);
-
   const navigateDetail = () => {
     //Navegar hacia el detalle del producto
     navigate(`/detail/${product.id}`)
@@ -24,9 +20,9 @@ const Item = ({product}) => {
   return (
     <div onClick={navigateDetail} className="card-detail">
       <img style={{width: 150,height: 150}} src={product.image} alt="product"/>
-      <p key={product.id}>{product.title}, stock: {product.quantity}</p>
+      <p key={product.id}>{product.title}, stock: {product.quantity}, price: USD {product.price}</p>
     </div>
   )
 }
 
-export default Item
+export default Item 
